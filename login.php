@@ -30,40 +30,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Shop</a>
-                    </li>
-                    <li>
-                        <a href="#">Login</a>
-                    </li>
-                    <li>
-                        <a href="admin">Admin</a>
-                    </li>
-                     <li>
-                        <a href="checkout.php">Checkout</a>
-                    </li>
-                    <li>
-                        <a href="contact.php">Contact</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
+        <?php include("Includes/Front/Top_NavBar.php");?>
         <!-- /.container -->
     </nav>
 
@@ -71,7 +38,7 @@
     <div class="container">
 
       <header>
-            <h1 class="text-center">Login</h1>
+            <h1 class="text-center">La-Boutique Login form</h1>
         <div class="col-sm-4 col-sm-offset-5">         
             <form class="" action="" method="post" enctype="multipart/form-data">
                 <div class="form-group"><label for="">
@@ -83,6 +50,10 @@
 
                 <div class="form-group">
                   <input type="submit" name="submit" class="btn btn-primary" >
+
+                    <p style="font-size:18px; color:#020607">
+                        New Customer? <a href="register.php" style="color: #3c5adb;">Sign in</a>
+                    </p>
                 </div>
             </form>
         </div>  
@@ -101,7 +72,7 @@
         <hr>
 
         <!-- Footer -->
-        <?php require_once("Includes/Back/Footer.php");?>
+        <?php include("Includes/Back/Footer.php");?>
 
     </div>
     <!-- /.container -->
