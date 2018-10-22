@@ -5,5 +5,4 @@ $dbUsername = "root";
 $dbPassword = " ";
 $dbName = "ecom_db";
 
-
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);

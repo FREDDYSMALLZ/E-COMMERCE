@@ -15,11 +15,8 @@ include_once 'Includes/dbh.inc.php';
             while ($row = mysqli_fetch_assoc($result)){
 
                 echo "<a href='' class='list-group-item'>{$row['category_title']}</a>";
-
             }
-
         }
-
         ?>
     </div>
 </div>
