@@ -1,8 +1,25 @@
+<?php
+include_once 'Includes/dbh.inc.php';
+?>
 <div class="col-md-3">
     <p class="lead">Boutique</p>
     <div class="list-group">
-        <a href="category.html" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
+
+        <?php
+        $sql = "SELECT * FROM categories;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows( $result);
+
+        if ( $resultCheck > 0){
+
+            while ($row = mysqli_fetch_assoc($result)){
+
+                echo "<a href='' class='list-group-item'>{$row['category_title']}</a>";
+
+            }
+
+        }
+
+        ?>
     </div>
 </div>
