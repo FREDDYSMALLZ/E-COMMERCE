@@ -52,7 +52,7 @@
                   <input type="submit" name="submit" class="btn btn-primary" >
 
                     <p style="font-size:18px; color:#020607">
-                        New Customer? <a href="register.php" style="color: #3c5adb;">Sign in</a>
+                        New Customer? <a href="register.php" style="color: #3c5adb;">Sign Up</a>
                     </p>
                 </div>
             </form>

@@ -1,13 +1,9 @@
 
 <!-- Configuration-->
-
 <!-- Header-->
 <?php include("Includes/Front/Header.php");?>
-
-
      <!--Navigation -->
-
-<?php include(TEMPLATE_FRONT .  "/top_nav.php");?>
+<?php include ("Includes/Front/Top_NavBar.php");?>
 
          <!-- Contact Section -->
 
