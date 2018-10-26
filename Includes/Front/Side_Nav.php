@@ -5,12 +5,12 @@
     <div class="list-group">
 
         <?php
-        $sql = "SELECT * FROM users;";
+        $sql = "SELECT * FROM categories;";
         $result = mysqli_query($db, $sql);
         $resultCheck = mysqli_num_rows( $result);
         if ( $resultCheck > 0){
             while ($row = mysqli_fetch_assoc($result)){
-                echo "<a href='' class='list-group-item'>{$row['FirstName']}</a>";
+                echo "<a href='' class='list-group-item'>{$row['categories_title']}</a>";
 
             }
         }
