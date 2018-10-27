@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
+               <!-- <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
                         <div class="caption">
@@ -64,9 +64,9 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
+                <!--<div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
                         <div class="caption">
@@ -86,9 +86,9 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
+               <!-- <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
                         <div class="caption">
@@ -108,9 +108,9 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="col-sm-4 col-lg-4 col-md-4">
+               <!-- <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
                         <div class="caption">
@@ -130,7 +130,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <h4><a href="#">Like this template?</a>
@@ -143,7 +143,7 @@
 
         </div>
 
-    </div>
+    </div><!--The row ends here-->
 
 </div>
 <!-- /.container -->
