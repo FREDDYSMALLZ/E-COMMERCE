@@ -1,4 +1,6 @@
 <?php
+
+//Helper functions
 //Redirection purposes
 function redirect($location){
     header("Location: $location");
@@ -26,4 +28,14 @@ function escape_string($string){
 //Fetch the result from the database
 function fetch_array($result){
     return mysqli_fetch_assoc($result);
+}
+//Get products from the database to be displayed on the index page
+function get_products(){
+    $query = query("SELECT * FROM products");
+    confirm($query);
+    while ($row = fetch_array($query)){
+
+     echo $row['product_price'];
+
+    }
 }
