@@ -30,8 +30,8 @@ function fetch_array($result){
     return mysqli_fetch_assoc($result);
 }
 //Get products from the database to be displayed on the index page
-function get_products(){
-    $query = query("SELECT * FROM products");
+function get_products_in_shop_page(){
+    $query = query("SELECT * FROM products WHERE product_category_id = ". escape_string($_GET['id']). " ");
     confirm($query);
     while ($row = fetch_array($query)){
 

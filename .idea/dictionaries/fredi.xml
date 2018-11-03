@@ -2,6 +2,8 @@
   <dictionary name="fredi">
     <words>
       <w>getcategories</w>
+      <w>getcategory</w>
+      <w>productitem</w>
     </words>
   </dictionary>
 </component>
