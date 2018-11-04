@@ -44,5 +44,4 @@
         </div>
 
     </div>
-    <!-- /.container -->
 <?php include("Includes/Back/Footer.php");?>
