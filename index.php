@@ -21,6 +21,7 @@
             </div>
 
             <div class="row">
+
                 <?php include ("Includes/product.php");?>
 
             </div>
