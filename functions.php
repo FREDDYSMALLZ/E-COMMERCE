@@ -1,9 +1,6 @@
-<?php 
-
-$upload_directory = "uploads";
+<?php
 
 // helper functions
-
 
 function last_id(){
 
@@ -95,7 +92,6 @@ return mysqli_fetch_array($result);
 
 
 /****************************FRONT END FUNCTIONS************************/
-
 // get products
 function get_products() {
 
@@ -111,17 +107,15 @@ $product = <<<DELIMETER
 
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
-        <a href="item.php?id={$row['product_id']}"><img src="../resources/{$product_image}" alt=""></a>
+        <a href="item.php?id={$row['product_id']}"><img src="{$product_image}" alt=""></a>
         <div class="caption">
             <h4 class="pull-right">&#36;{$row['product_price']}</h4>
             <h4><a href="item.php?id={$row['product_id']}">{$row['product_title']}</a>
             </h4>
             <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-             <a class="btn btn-primary" target="_blank" href="/resources/cart.php?add={$row['product_id']}">Add to cart</a>
+             <a class="btn btn-primary" target="_blank" href="cart.php?add={$row['product_id']}">Add to cart</a>
         </div>
 
-
-       
     </div>
 </div>
 
@@ -134,7 +128,6 @@ echo $product;
 
 
 }
-
 
 function get_categories(){
 
@@ -160,9 +153,7 @@ echo $categories_links;
 
 }
 
-
 function get_products_in_cat_page() {
-
 
 $query = query(" SELECT * FROM products WHERE product_category_id = " . escape_string($_GET['id']) . " ");
 confirm($query);
@@ -176,7 +167,7 @@ $product = <<<DELIMETER
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="../resources/{$product_image}" alt="">
+                    <img src="{$product_image}" alt="">
                     <div class="caption">
                         <h3>{$row['product_title']}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -209,15 +200,14 @@ $product_image = display_image($row['product_image']);
 
 $product = <<<DELIMETER
 
-
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="../resources/{$product_image}" alt="">
+                    <img src="{$product_image}" alt="">
                     <div class="caption">
                         <h3>{$row['product_title']}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <p>
-                            <a href="../resources/cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
+                            <a href="cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -695,7 +685,6 @@ echo $report;
 
 }
 
-
 function cart()
 {
     $total = 0;
@@ -710,11 +699,8 @@ function cart()
 
             if (substr($name, 0, 8) == "product_") {
 
-
-                $length = strlen($name - 8);
-
+                $length = strlen(-8);
                 $id = substr($name, 8, $length);
-
 
                 $query = query("SELECT * FROM products WHERE product_id = " . escape_string($id) . " ");
                 confirm($query);
@@ -738,7 +724,7 @@ function cart()
   <td>{$value}</td>
   <td>&#36;{$sub}</td>
   <td><a class='btn btn-warning' href="cart.php?remove={$row['product_id']}"><span class='glyphicon glyphicon-minus'></span></a>   <a class='btn btn-success' href="../resources/cart.php?add={$row['product_id']}"><span class='glyphicon glyphicon-plus'></span></a>
-<a class='btn btn-danger' href="cart.php?delete={$row['product_id']}"><span class='glyphicon glyphicon-remove'></span></a></td>         
+  <a class='btn btn-danger' href="cart.php?delete={$row['product_id']}"><span class='glyphicon glyphicon-remove'></span></a></td>         
   </tr>
 
 <input type="hidden" name="item_name_{$item_name}" value="{$row['product_title']}">
@@ -746,23 +732,18 @@ function cart()
 <input type="hidden" name="amount_{$amount}" value="{$row['product_price']}">
 <input type="hidden" name="quantity_{$quantity}" value="{$value}">
 
-
 DELIMETER;
 
                     echo $product;
-
                     $item_name++;
                     $item_number++;
                     $amount++;
                     $quantity++;
 
-
                 }
-
 
                 $_SESSION['item_total'] = $total += $sub;
                 $_SESSION['item_quantity'] = $item_quantity;
-
 
             }
 
@@ -770,15 +751,10 @@ DELIMETER;
 
     }
 
-
 }
-
 function show_paypal()
 {
-
-
     if (isset($_SESSION['item_quantity']) && $_SESSION['item_quantity'] >= 1) {
-
 
         $paypal_button = <<<DELIMETER
 
@@ -792,6 +768,5 @@ DELIMETER;
         return $paypal_button;
 
     }
-
 
 }

@@ -83,10 +83,8 @@
                               $sub = $row['product_price'] * $value;
                               $item_quantity += $value;
 
-
                               $insert_report = query("INSERT INTO reports (product_id, order_id, product_title, product_price, product_quantity) VALUES('{$id}','{$last_id}','{$product_title}','{$product_price}','{$value}')");
                               confirm($insert_report);
-
 
                           }
 
@@ -94,11 +92,8 @@
                           $item_quantity;
 
                       }
-
                   }
-
               }
-
               session_destroy();
           } else {
 

@@ -1,21 +1,16 @@
-<?php require_once("../resources/config.php"); ?>
-
-<?php include(TEMPLATE_FRONT . DS . "header.php") ?>
+<?php require_once("config.php"); ?>
+<?php include("Includes/Front/header.php") ?>
     <!-- Page Content -->
 <div class="container">
 
        <!-- Side Navigation -->
-
-              <?php include(TEMPLATE_FRONT . DS . "side_nav.php") ?>
-
+              <?php include("Includes/Front/side_nav.php") ?>
 <?php 
-
 
 $query = query(" SELECT * FROM products WHERE product_id = " . escape_string($_GET['id']) . " ");
 confirm($query);
 
 while($row = fetch_array($query)):
-
 
  ?>
 
@@ -55,13 +50,10 @@ while($row = fetch_array($query)):
             4.0 stars
         </p>
     </div>
-          
         <p><?php echo $row['short_desc']; ?></p>
-
-   
     <form action="">
         <div class="form-group">
-           <a href="../resources/cart.php?add=<?php echo $row['product_id']; ?>" class="btn btn-primary">ADD</a>
+           <a href="cart.php?add=<?php echo $row['product_id']; ?>" class="btn btn-primary">ADD</a>
         </div>
     </form>
 
@@ -195,18 +187,11 @@ while($row = fetch_array($query)):
 
 </div>
 
-
 </div><!--Row for Tab Panel-->
-
-
-
 
 </div><!-- col-md-9 ends here -->
 
-
 <?php endwhile; ?>
-
 </div>
     <!-- /.container -->
-
-<?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+<?php include("Includes/Front/footer.php") ?>
