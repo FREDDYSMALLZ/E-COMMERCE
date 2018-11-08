@@ -1,16 +1,23 @@
+<?php require_once("config.php"); ?>
 
-<?php include("Includes/Front/Header.php");?>
+<?php include("Includes/Front/header.php") ?>
+
          <!-- Contact Section -->
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted"></h3>
+                    <h3 class="section-subheading ">
+                        <?php display_message(); ?>
+                    </h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" method="post">
+                    <form name="sentMessage" id="contactForm" method="post" >
+
+                        <?php send_message(); ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -22,7 +29,7 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input name="subject" type="text"  class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input name="subject" type="text" class="form-control" placeholder="Your Subject" id="phone" required data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -44,4 +51,7 @@
         </div>
 
     </div>
-<?php include("Includes/Back/Footer.php");?>
+    <!-- /.container -->
+
+
+<?php include("Includes/Front/footer.php") ?>

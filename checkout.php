@@ -1,14 +1,12 @@
 <?php require_once("config.php"); ?>
-<?php include("Includes/Front/Header.php") ?>
-
-
+<?php include("Includes/Front/header.php") ?>
     <!-- Page Content -->
     <div class="container">
-
 
 <!-- /.row --> 
 
 <div class="row">
+      <h4 class="text-center bg-danger"><?php display_message(); ?></h4>
       <h1>Checkout</h1>
 
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
@@ -29,7 +27,7 @@
           <?php cart(); ?>
         </tbody>
     </table>
-    <?php show_paypal(); ?>
+  <?php echo show_paypal(); ?>
 </form>
 
 
@@ -68,13 +66,8 @@ echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_
 
 </div><!-- CART TOTALS-->
 
-
  </div><!--Main Content-->
-
 
     </div>
     <!-- /.container -->
-
-
-
-<?php include("Includes/Back/Footer.php") ?>
+<?php include("Includes/Front/footer.php") ?>

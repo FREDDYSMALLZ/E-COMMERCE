@@ -147,7 +147,7 @@ while($row = fetch_array($query)) {
 
 $categories_links = <<<DELIMETER
 
-<a href='category.php?id={$row['cat_id']}' class='list-group-item'>{$row['cat_title']}</a>
+<a href='category.php?id={$row['categories_id']}' class='list-group-item'>{$row['categories_title']}</a>
 
 
 DELIMETER;
@@ -181,7 +181,7 @@ $product = <<<DELIMETER
                         <h3>{$row['product_title']}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <p>
-                            <a href="../resources/cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
+                            <a href="cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -343,7 +343,7 @@ function display_image($picture) {
 
 global $upload_directory;
 
-return $upload_directory  . DS . $picture;
+return $upload_directory.$picture;
 
 
 

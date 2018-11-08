@@ -1,7 +1,11 @@
-<?php include_once('server.php') ?>
-<?php include_once('db.php') ?>
-<div class="col-md-3">
-    <p class="lead">Boutique</p>
 
-    <?php include("Includes/getcategories.php");?>
+<div class="col-md-3">
+    <p class="lead">Shop Name</p>
+    <div class="list-group">
+
+    	<?php
+    		get_categories();
+    	 ?>
+
+    </div>
 </div>
