@@ -1,24 +1,18 @@
-<?php include("Includes/Front/Header.php");?>
+<?php require_once("config.php"); ?>
+<?php include("Includes/Front/header.php") ?>
     <!-- Page Content -->
     <div class="container">
-
         <!-- Jumbotron Header -->
         <header>
             <h1>Shop</h1>
         </header>
-
         <hr>
-
         <!-- /.row -->
-
         <!-- Page Features -->
         <div class="row text-center">
-
-         <?php include ("get_product_in_category.php"); ?>
-
+         <?php get_products_in_shop_page(); ?>
         </div>
         <!-- /.row -->
-
     </div>
     <!-- /.container -->
-<?php require_once("Includes/Back/Footer.php");?>
+<?php include("Includes/Front/footer.php") ?>

@@ -1,37 +1,39 @@
+<?php require_once("config.php"); ?>
 
-<?php include("Includes/Front/Header.php");?>
-
-<!-- Page Content -->
-<div class="container">
-
-    <div class="row">
-
-        <?php include ("Includes/Front/Side_Nav.php");?>
+<?php include("Includes/Front/header.php") ?>
 
 
-        <div class="col-md-9">
+    <!-- Page Content -->
+    <div class="container">
 
-            <div class="row carousel-holder">
+        <div class="row">
 
-                <div class="col-md-12">
+          <?php include("Includes/Front/side_nav.php") ?>
 
-                    <?php include ("Includes/Front/Slider.php");?>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+
+                      <?php include("Includes/Front/slider.php") ?>
+                        
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="row">
 
-            <div class="row">
-                <?php include ("Includes/product.php");?>
+                    <?php get_products(); ?>
+
+
+                </div><!-- ROw ends here-->
 
             </div>
 
         </div>
 
-    </div><!--The row ends here-->
-
-</div>
-<!-- /.container -->
-<?php include("Includes/Back/Footer.php");?>
-<!-- /.container -->
-
-</html>
+    </div>
+    <!-- /.container -->
+<?php include("Includes/Front/footer.php") ?>

@@ -5,7 +5,6 @@ the website.
 -->
 <?php include('server.php') ?>
 <?php include('db.php') ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,8 +19,6 @@ the website.
 	</style>
 </head>
 <body>
-
-
 	<div class="header">
 		<h2>The E-Commerce Login Page </h2>
 	</div>
@@ -44,10 +41,7 @@ the website.
 
 		<p style="font-size:18px; color:#c1c9c7">
 			New Customer ? <a href="registration.php" style="color: #2bc0db;">Sign up</a>
-
 		</p>
-
 	</form>
-
 </body>
 </html>

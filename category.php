@@ -1,4 +1,7 @@
-<?php include("Includes/Front/Header.php");?>
+<?php require_once("config.php"); ?>
+
+<?php include("Includes/Front/header.php") ?>
+
     <!-- Page Content -->
     <div class="container">
 
@@ -15,29 +18,19 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Latest Products </h3>
+                <h3>Latest Product</h3>
             </div>
         </div>
         <!-- /.row -->
 
         <!-- Page Features -->
-        <?php include ("get_product_in_category.php");?>
+        <div class="row text-center">
 
+         <?php get_products_in_cat_page(); ?>
+
+        </div>
         <!-- /.row -->
-
-        <hr>
-
-        <?php require_once("Includes/Back/Footer.php");?>
 
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="Includes/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="Includes/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<?php include("Includes/Front/footer.php") ?>
