@@ -525,8 +525,8 @@ function show_categories_in_admin()
 
     while ($row = fetch_array($category_query)) {
 
-        $cat_id = $row['cat_id'];
-        $cat_title = $row['cat_title'];
+        $cat_id = $row['categories_id'];
+        $cat_title = $row['categories_title'];
 
 
         $category = <<<DELIMETER
@@ -535,7 +535,7 @@ function show_categories_in_admin()
 <tr>
     <td>{$cat_id}</td>
     <td>{$cat_title}</td>
-    <td><a class="btn btn-danger" href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+    <td><a class="btn btn-danger" href="delete_category.php?id={$row['categories_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
 </tr>
 
 
@@ -555,7 +555,7 @@ function add_category()
 {
 
     if (isset($_POST['add_category'])) {
-        $cat_title = escape_string($_POST['cat_title']);
+        $cat_title = escape_string($_POST['categories_title']);
 
         if (empty($cat_title) || $cat_title == " ") {
 

@@ -40,7 +40,7 @@ Description:
 </head>
 
 <body>
-<?php require_once("../config.php"); ?>
+<?php require_once("config.php"); ?>
 <div id="wrapper">
 
     <?php include("admin_navigation.php") ?>

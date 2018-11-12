@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>E-Commerce Shop</title>
+    <title>Shop Homepage - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="Includes/css/bootstrap.min.css" rel="stylesheet">
@@ -32,5 +32,5 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <?php include("Includes/Front/top_nav.php") ?>
+        <?php include("top_nav.php")?>
     </nav>
