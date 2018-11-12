@@ -2,24 +2,26 @@
 
 // helper functions
 
-function last_id(){
+function last_id()
+{
 
-global $connection;
+    global $connection;
 
-return mysqli_insert_id($connection);
+    return mysqli_insert_id($connection);
 
 
 }
 
-function set_message($msg){
+function set_message($msg)
+{
 
-if(!empty($msg)) {
+    if (!empty($msg)) {
 
-$_SESSION['message'] = $msg;
+        $_SESSION['message'] = $msg;
 
-} else {
+    } else {
 
-$msg = "";
+        $msg = "";
 
 
     }
@@ -27,9 +29,10 @@ $msg = "";
 
 }
 
-function display_message() {
+function display_message()
+{
 
-    if(isset($_SESSION['message'])) {
+    if (isset($_SESSION['message'])) {
 
         echo $_SESSION['message'];
         unset($_SESSION['message']);
@@ -37,55 +40,58 @@ function display_message() {
     }
 
 
-
 }
 
-function redirect($location){
+function redirect($location)
+{
 
-return header("Location: $location ");
-
-
-}
-
-function query($sql) {
-
-global $connection;
-
-return mysqli_query($connection, $sql);
+    return header("Location: $location ");
 
 
 }
 
+function query($sql)
+{
 
-function confirm($result){
+    global $connection;
 
-global $connection;
-
-if(!$result) {
-
-die("QUERY FAILED " . mysqli_error($connection));
-
-
-	}
+    return mysqli_query($connection, $sql);
 
 
 }
 
 
-function escape_string($string){
+function confirm($result)
+{
 
-global $connection;
+    global $connection;
 
-return mysqli_real_escape_string($connection, $string);
+    if (!$result) {
+
+        die("QUERY FAILED " . mysqli_error($connection));
+
+
+    }
 
 
 }
 
 
+function escape_string($string)
+{
 
-function fetch_array($result){
+    global $connection;
 
-return mysqli_fetch_array($result);
+    return mysqli_real_escape_string($connection, $string);
+
+
+}
+
+
+function fetch_array($result)
+{
+
+    return mysqli_fetch_array($result);
 
 
 }
@@ -93,17 +99,18 @@ return mysqli_fetch_array($result);
 
 /****************************FRONT END FUNCTIONS************************/
 // get products
-function get_products() {
+function get_products()
+{
 
 
-$query = query(" SELECT * FROM products");
-confirm($query);
+    $query = query(" SELECT * FROM products");
+    confirm($query);
 
-while($row = fetch_array($query)) {
+    while ($row = fetch_array($query)) {
 
-$product_image = display_image($row['product_image']);
+        $product_image = display_image($row['product_image']);
 
-$product = <<<DELIMETER
+        $product = <<<DELIMETER
 
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
@@ -121,48 +128,49 @@ $product = <<<DELIMETER
 
 DELIMETER;
 
-echo $product;
+        echo $product;
 
 
-		}
+    }
 
 
 }
 
-function get_categories(){
+function get_categories()
+{
 
 
-$query = query("SELECT * FROM categories");
-confirm($query);
+    $query = query("SELECT * FROM categories");
+    confirm($query);
 
-while($row = fetch_array($query)) {
+    while ($row = fetch_array($query)) {
 
 
-$categories_links = <<<DELIMETER
+        $categories_links = <<<DELIMETER
 
 <a href='category.php?id={$row['categories_id']}' class='list-group-item'>{$row['categories_title']}</a>
 
 
 DELIMETER;
 
-echo $categories_links;
+        echo $categories_links;
 
-     }
-
+    }
 
 
 }
 
-function get_products_in_cat_page() {
+function get_products_in_cat_page()
+{
 
-$query = query(" SELECT * FROM products WHERE product_category_id = " . escape_string($_GET['id']) . " ");
-confirm($query);
+    $query = query(" SELECT * FROM products WHERE product_category_id = " . escape_string($_GET['id']) . " ");
+    confirm($query);
 
-while($row = fetch_array($query)) {
+    while ($row = fetch_array($query)) {
 
-$product_image = display_image($row['product_image']);
+        $product_image = display_image($row['product_image']);
 
-$product = <<<DELIMETER
+        $product = <<<DELIMETER
 
 
             <div class="col-md-3 col-sm-6 hero-feature">
@@ -180,97 +188,98 @@ $product = <<<DELIMETER
 
 DELIMETER;
 
-echo $product;
-
-
-		}
-
-
-}
-
-function get_products_in_shop_page() {
-
-
-$query = query(" SELECT * FROM products");
-confirm($query);
-
-while($row = fetch_array($query)) {
-
-$product_image = display_image($row['product_image']);
-
-$product = <<<DELIMETER
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="{$product_image}" alt="">
-                    <div class="caption">
-                        <h3>{$row['product_title']}</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-DELIMETER;
-
-echo $product;
-
-
-        }
-
-
-}
-
-function login_user(){
-
-if(isset($_POST['submit'])){
-
-$username = escape_string($_POST['username']);
-$password = escape_string($_POST['password']);
-
-$query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password }' ");
-confirm($query);
-
-if(mysqli_num_rows($query) == 0) {
-
-set_message("Your Password or Username are wrong");
-redirect("login.php");
-
-
-} else {
-
-$_SESSION['username'] = $username;
-redirect("admin");
-
-         }
-
+        echo $product;
 
 
     }
 
 
+}
+
+function get_products_in_shop_page()
+{
+
+
+    $query = query(" SELECT * FROM products");
+    confirm($query);
+
+    while ($row = fetch_array($query)) {
+
+        $product_image = display_image($row['product_image']);
+
+        $product = <<<DELIMETER
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="{$product_image}" alt="">
+                    <div class="caption">
+                        <h3>{$row['product_title']}</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="cart.php?add={$row['product_id']}" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+DELIMETER;
+
+        echo $product;
+
+
+    }
+
 
 }
 
-function send_message() {
+function login_user()
+{
 
-    if(isset($_POST['submit'])){ 
+    if (isset($_POST['submit'])) {
 
-        $to          = "someEmailaddress@gmail.com";
-        $from_name   =   $_POST['name'];
-        $subject     =   $_POST['subject'];
-        $email       =   $_POST['email'];
-        $message     =   $_POST['message'];
+        $username = escape_string($_POST['username']);
+        $password = escape_string($_POST['password']);
+
+        $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password }' ");
+        confirm($query);
+
+        if (mysqli_num_rows($query) == 0) {
+
+            set_message("Your Password or Username are wrong");
+            redirect("login.php");
+
+
+        } else {
+
+            $_SESSION['username'] = $username;
+            redirect("admin");
+
+        }
+
+
+    }
+
+
+}
+
+function send_message()
+{
+
+    if (isset($_POST['submit'])) {
+
+        $to = "someEmailaddress@gmail.com";
+        $from_name = $_POST['name'];
+        $subject = $_POST['subject'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
 
 
         $headers = "From: {$from_name} {$email}";
 
 
-        $result = mail($to, $subject, $message,$headers);
+        $result = mail($to, $subject, $message, $headers);
 
-        if(!$result) {
+        if (!$result) {
 
             set_message("Sorry there was an error in sending your message");
             redirect("contact.php");
@@ -281,26 +290,24 @@ function send_message() {
         }
 
 
-
-
     }
 
 
 }
 
 /****************************BACK END FUNCTIONS************************/
-function display_orders(){
+function display_orders()
+{
 
 
-
-$query = query("SELECT * FROM orders");
-confirm($query);
-
-
-while($row = fetch_array($query)) {
+    $query = query("SELECT * FROM orders");
+    confirm($query);
 
 
-$orders = <<<DELIMETER
+    while ($row = fetch_array($query)) {
+
+
+        $orders = <<<DELIMETER
 
 <tr>
     <td>{$row['order_id']}</td>
@@ -316,12 +323,10 @@ $orders = <<<DELIMETER
 
 DELIMETER;
 
-echo $orders;
-
+        echo $orders;
 
 
     }
-
 
 
 }
@@ -329,34 +334,35 @@ echo $orders;
 
 /************************ Admin Products Page ********************/
 
-function display_image($picture) {
+function display_image($picture)
+{
 
-global $upload_directory;
+    global $upload_directory;
 
-return $upload_directory.$picture;
-
+    return $upload_directory . $picture;
 
 
 }
 
-function get_products_in_admin(){
+function get_products_in_admin()
+{
 
 
-$query = query(" SELECT * FROM products");
-confirm($query);
+    $query = query(" SELECT * FROM products");
+    confirm($query);
 
-while($row = fetch_array($query)) {
+    while ($row = fetch_array($query)) {
 
-$category = show_product_category_title($row['product_category_id']);
+        $category = show_product_category_title($row['product_category_id']);
 
-$product_image = display_image($row['product_image']);
+        $product_image = display_image($row['product_image']);
 
-$product = <<<DELIMETER
+        $product = <<<DELIMETER
 
         <tr>
             <td>{$row['product_id']}</td>
             <td>{$row['product_title']}<br>
-        <a href="index.php?edit_product&id={$row['product_id']}"><img width='100' src="../../resources/{$product_image}" alt=""></a>
+        <a href="admin_index.php?edit_product&id={$row['product_id']}"><img width='100' src="../../resources/{$product_image}" alt=""></a>
             </td>
             <td>{$category}</td>
             <td>{$row['product_price']}</td>
@@ -366,169 +372,164 @@ $product = <<<DELIMETER
 
 DELIMETER;
 
-echo $product;
+        echo $product;
 
 
-        }
-
-
-
+    }
 
 
 }
 
 
-function show_product_category_title($product_category_id){
+function show_product_category_title($product_category_id)
+{
 
 
-$category_query = query("SELECT * FROM categories WHERE cat_id = '{$product_category_id}' ");
-confirm($category_query);
+    $category_query = query("SELECT * FROM categories WHERE cat_id = '{$product_category_id}' ");
+    confirm($category_query);
 
-while($category_row = fetch_array($category_query)) {
+    while ($category_row = fetch_array($category_query)) {
 
-return $category_row['cat_title'];
+        return $category_row['cat_title'];
 
-}
-
+    }
 
 
 }
 
 /***************************Add Products in admin********************/
 
-function add_product() {
+function add_product()
+{
 
 
-if(isset($_POST['publish'])) {
+    if (isset($_POST['publish'])) {
 
 
-$product_title          = escape_string($_POST['product_title']);
-$product_category_id    = escape_string($_POST['product_category_id']);
-$product_price          = escape_string($_POST['product_price']);
-$product_description    = escape_string($_POST['product_description']);
-$short_desc             = escape_string($_POST['short_desc']);
-$product_quantity       = escape_string($_POST['product_quantity']);
-$product_image          = escape_string($_FILES['file']['name']);
-$image_temp_location    = escape_string($_FILES['file']['tmp_name']);
+        $product_title = escape_string($_POST['product_title']);
+        $product_category_id = escape_string($_POST['product_category_id']);
+        $product_price = escape_string($_POST['product_price']);
+        $product_description = escape_string($_POST['product_description']);
+        $short_desc = escape_string($_POST['short_desc']);
+        $product_quantity = escape_string($_POST['product_quantity']);
+        $product_image = escape_string($_FILES['file']['name']);
+        $image_temp_location = escape_string($_FILES['file']['tmp_name']);
 
-move_uploaded_file($image_temp_location  , UPLOAD_DIRECTORY . DS . $product_image);
-
-
-$query = query("INSERT INTO products(product_title, product_category_id, product_price, product_description, short_desc, product_quantity, product_image) VALUES('{$product_title}', '{$product_category_id}', '{$product_price}', '{$product_description}', '{$short_desc}', '{$product_quantity}', '{$product_image}')");
-$last_id = last_id();
-confirm($query);
-set_message("New Product with id {$last_id} was Added");
-redirect("index.php?products");
+        move_uploaded_file($image_temp_location, UPLOAD_DIRECTORY . DS . $product_image);
 
 
-        }
+        $query = query("INSERT INTO products(product_title, product_category_id, product_price, product_description, short_desc, product_quantity, product_image) VALUES('{$product_title}', '{$product_category_id}', '{$product_price}', '{$product_description}', '{$short_desc}', '{$product_quantity}', '{$product_image}')");
+        $last_id = last_id();
+        confirm($query);
+        set_message("New Product with id {$last_id} was Added");
+        redirect("admin_index.php?products");
+
+
+    }
 
 
 }
 
-function show_categories_add_product_page(){
+function show_categories_add_product_page()
+{
 
 
-$query = query("SELECT * FROM categories");
-confirm($query);
+    $query = query("SELECT * FROM categories");
+    confirm($query);
 
-while($row = fetch_array($query)) {
+    while ($row = fetch_array($query)) {
 
 
-$categories_options = <<<DELIMETER
+        $categories_options = <<<DELIMETER
 
  <option value="{$row['cat_id']}">{$row['cat_title']}</option>
 
 
 DELIMETER;
 
-echo $categories_options;
+        echo $categories_options;
 
-     }
-
+    }
 
 
 }
-
 
 
 /***************************updating product code ***********************/
 
-function update_product() {
+function update_product()
+{
 
 
-if(isset($_POST['update'])) {
+    if (isset($_POST['update'])) {
 
 
-$product_title          = escape_string($_POST['product_title']);
-$product_category_id    = escape_string($_POST['product_category_id']);
-$product_price          = escape_string($_POST['product_price']);
-$product_description    = escape_string($_POST['product_description']);
-$short_desc             = escape_string($_POST['short_desc']);
-$product_quantity       = escape_string($_POST['product_quantity']);
-$product_image          = escape_string($_FILES['file']['name']);
-$image_temp_location    = escape_string($_FILES['file']['tmp_name']);
+        $product_title = escape_string($_POST['product_title']);
+        $product_category_id = escape_string($_POST['product_category_id']);
+        $product_price = escape_string($_POST['product_price']);
+        $product_description = escape_string($_POST['product_description']);
+        $short_desc = escape_string($_POST['short_desc']);
+        $product_quantity = escape_string($_POST['product_quantity']);
+        $product_image = escape_string($_FILES['file']['name']);
+        $image_temp_location = escape_string($_FILES['file']['tmp_name']);
 
 
-if(empty($product_image)) {
+        if (empty($product_image)) {
 
-$get_pic = query("SELECT product_image FROM products WHERE product_id =" .escape_string($_GET['id']). " ");
-confirm($get_pic);
+            $get_pic = query("SELECT product_image FROM products WHERE product_id =" . escape_string($_GET['id']) . " ");
+            confirm($get_pic);
 
-while($pic = fetch_array($get_pic)) {
+            while ($pic = fetch_array($get_pic)) {
 
-$product_image = $pic['product_image'];
+                $product_image = $pic['product_image'];
 
-    }
-
-}
-
-
-
-move_uploaded_file($image_temp_location  , UPLOAD_DIRECTORY . DS . $product_image);
-
-
-$query = "UPDATE products SET ";
-$query .= "product_title            = '{$product_title}'        , ";
-$query .= "product_category_id      = '{$product_category_id}'  , ";
-$query .= "product_price            = '{$product_price}'        , ";
-$query .= "product_description      = '{$product_description}'  , ";
-$query .= "short_desc               = '{$short_desc}'           , ";
-$query .= "product_quantity         = '{$product_quantity}'     , ";
-$query .= "product_image            = '{$product_image}'          ";
-$query .= "WHERE product_id=" . escape_string($_GET['id']);
-
-
-
-
-
-$send_update_query = query($query);
-confirm($send_update_query);
-set_message("Product has been updated");
-redirect("index.php?products");
-
+            }
 
         }
+
+
+        move_uploaded_file($image_temp_location, UPLOAD_DIRECTORY . DS . $product_image);
+
+
+        $query = "UPDATE products SET ";
+        $query .= "product_title            = '{$product_title}'        , ";
+        $query .= "product_category_id      = '{$product_category_id}'  , ";
+        $query .= "product_price            = '{$product_price}'        , ";
+        $query .= "product_description      = '{$product_description}'  , ";
+        $query .= "short_desc               = '{$short_desc}'           , ";
+        $query .= "product_quantity         = '{$product_quantity}'     , ";
+        $query .= "product_image            = '{$product_image}'          ";
+        $query .= "WHERE product_id=" . escape_string($_GET['id']);
+
+
+        $send_update_query = query($query);
+        confirm($send_update_query);
+        set_message("Product has been updated");
+        redirect("admin_index.php?products");
+
+
+    }
 
 
 }
 
 /*************************Categories in admin ********************/
 
-function show_categories_in_admin() {
+function show_categories_in_admin()
+{
 
 
-$category_query = query("SELECT * FROM categories");
-confirm($category_query);
+    $category_query = query("SELECT * FROM categories");
+    confirm($category_query);
 
 
-while($row = fetch_array($category_query)) {
+    while ($row = fetch_array($category_query)) {
 
-$cat_id = $row['cat_id'];
-$cat_title = $row['cat_title'];
+        $cat_id = $row['cat_id'];
+        $cat_title = $row['cat_title'];
 
 
-$category = <<<DELIMETER
+        $category = <<<DELIMETER
 
 
 <tr>
@@ -541,63 +542,60 @@ $category = <<<DELIMETER
 
 DELIMETER;
 
-echo $category;
-
+        echo $category;
 
 
     }
-
 
 
 }
 
 
-function add_category() {
+function add_category()
+{
 
-if(isset($_POST['add_category'])) {
-$cat_title = escape_string($_POST['cat_title']);
+    if (isset($_POST['add_category'])) {
+        $cat_title = escape_string($_POST['cat_title']);
 
-if(empty($cat_title) || $cat_title == " ") {
+        if (empty($cat_title) || $cat_title == " ") {
 
-echo "<p class='bg-danger'>THIS CANNOT BE EMPTY</p>";
-
-
-} else {
+            echo "<p class='bg-danger'>THIS CANNOT BE EMPTY</p>";
 
 
-$insert_cat = query("INSERT INTO categories(cat_title) VALUES('{$cat_title}') ");
-confirm($insert_cat);
-set_message("Category Created");
+        } else {
 
+
+            $insert_cat = query("INSERT INTO categories(cat_title) VALUES('{$cat_title}') ");
+            confirm($insert_cat);
+            set_message("Category Created");
+
+
+        }
 
 
     }
-
-
-    }
-
-
 
 
 }
 
- /************************admin users***********************/
+/************************admin users***********************/
 
-function display_users() {
-
-
-$category_query = query("SELECT * FROM users");
-confirm($category_query);
+function display_users()
+{
 
 
-while($row = fetch_array($category_query)) {
+    $category_query = query("SELECT * FROM users");
+    confirm($category_query);
 
-$user_id = $row['user_id'];
-$username = $row['username'];
-$email = $row['email'];
-$password = $row['password'];
 
-$user = <<<DELIMETER
+    while ($row = fetch_array($category_query)) {
+
+        $user_id = $row['user_id'];
+        $username = $row['username'];
+        $email = $row['email'];
+        $password = $row['password'];
+
+        $user = <<<DELIMETER
 
 
 <tr>
@@ -611,26 +609,25 @@ $user = <<<DELIMETER
 
 DELIMETER;
 
-echo $user;
-
+        echo $user;
 
 
     }
 
 
-
 }
 
 
-function add_user() {
+function add_user()
+{
 
 
-if(isset($_POST['add_user'])) {
+    if (isset($_POST['add_user'])) {
 
 
-$username   = escape_string($_POST['username']);
-$email      = escape_string($_POST['email']);
-$password   = escape_string($_POST['password']);
+        $username = escape_string($_POST['username']);
+        $email = escape_string($_POST['email']);
+        $password = escape_string($_POST['password']);
 // $user_photo = escape_string($_FILES['file']['name']);
 // $photo_temp = escape_string($_FILES['file']['tmp_name']);
 
@@ -638,32 +635,31 @@ $password   = escape_string($_POST['password']);
 // move_uploaded_file($photo_temp, UPLOAD_DIRECTORY . DS . $user_photo);
 
 
-$query = query("INSERT INTO users(username,email,password) VALUES('{$username}','{$email}','{$password}')");
-confirm($query);
+        $query = query("INSERT INTO users(username,email,password) VALUES('{$username}','{$email}','{$password}')");
+        confirm($query);
 
-set_message("USER CREATED");
+        set_message("USER CREATED");
 
-redirect("index.php?users");
+        redirect("admin_index.php?users");
 
 
-
-}
-
+    }
 
 
 }
 
 
-function get_reports(){
+function get_reports()
+{
 
 
-$query = query(" SELECT * FROM reports");
-confirm($query);
+    $query = query(" SELECT * FROM reports");
+    confirm($query);
 
-while($row = fetch_array($query)) {
+    while ($row = fetch_array($query)) {
 
 
-$report = <<<DELIMETER
+        $report = <<<DELIMETER
 
         <tr>
              <td>{$row['report_id']}</td>
@@ -677,10 +673,10 @@ $report = <<<DELIMETER
 
 DELIMETER;
 
-echo $report;
+        echo $report;
 
 
-        }
+    }
 
 
 }
@@ -752,6 +748,7 @@ DELIMETER;
     }
 
 }
+
 function show_paypal()
 {
     if (isset($_SESSION['item_quantity']) && $_SESSION['item_quantity'] >= 1) {

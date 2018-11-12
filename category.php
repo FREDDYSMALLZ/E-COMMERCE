@@ -1,3 +1,10 @@
+<!--
+Project Title: E-Commerce
+Version: 1.4
+Authors: Fredrick Ondieki, Michael Weaver
+Date Updated: 11/11/2018
+Description:
+-->
 <?php require_once("config.php"); ?>
 
 <?php include("Includes/Front/header.php") ?>
