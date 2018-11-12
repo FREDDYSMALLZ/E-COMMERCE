@@ -1,4 +1,10 @@
-
+<!--
+Project Title: E-Commerce
+Version: 1.4
+Authors: Fredrick Ondieki, Michael Weaver
+Date Updated: 11/11/2018
+Description:
+-->
 <!--
 The Server.php file is included serves the purpose of connecting the database when the user logs into
 the website.
@@ -22,6 +28,8 @@ the website.
 	<div class="header">
 		<h2>The E-Commerce Login Page </h2>
 	</div>
+
+    <?php include("Includes/Front/header.php") ?>
 
 	<form method="post" action="login.php">
 		<!-- Get the errors incase the user attempts to log in with empty fields -->

@@ -1,3 +1,10 @@
+<!--
+Project Title: E-Commerce
+Version: 1.4
+Authors: Fredrick Ondieki, Michael Weaver
+Date Updated: 11/11/2018
+Description:
+-->
 <!--First, Make a connection to the Database-->
 <?php include('server.php') ?>
 <!DOCTYPE html>
