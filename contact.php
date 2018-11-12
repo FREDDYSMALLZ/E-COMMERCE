@@ -1,9 +1,7 @@
 <?php require_once("config.php"); ?>
 
 <?php include("Includes/Front/header.php") ?>
-
          <!-- Contact Section -->
-
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
