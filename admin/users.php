@@ -40,7 +40,6 @@ Description:
 </head>
 
 <body>
-<?php require_once("config.php"); ?>
 <div id="wrapper">
 
     <?php include("admin_navigation.php") ?>
@@ -58,9 +57,7 @@ Description:
 
                 </h1>
                 <p class="bg-success">
-                    <?php echo $message; ?>
                 </p>
-
                 <a href="add_user.php" class="btn btn-primary">Add User</a>
 
 
@@ -78,8 +75,6 @@ Description:
                         </thead>
 
                         <tbody>
-                        <?php display_users() ?>
-
                         </tbody>
                     </table> <!--End of Table-->
 
