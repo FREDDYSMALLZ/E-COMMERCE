@@ -29,35 +29,21 @@ Description:
                 <div class="row">
 
                     <div class="col-md-7">
-
-
                         <img class="img-responsive"
                              src="../resources/<?php echo display_image($row['product_image']); ?>" alt="">
-
-
                     </div>
 
                     <div class="col-md-5">
 
                         <div class="thumbnail">
 
-
                             <div class="caption-full">
                                 <h4><a href="#"><?php echo $row['product_title']; ?></a></h4>
                                 <hr>
                                 <h4 class=""><?php echo "&#36;" . $row['product_price']; ?></h4>
 
-                                <div class="ratings">
 
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        4.0 stars
-                                    </p>
-                                </div>
+
                                 <p><?php echo $row['short_desc']; ?></p>
                                 <form action="">
                                     <div class="form-group">
@@ -75,9 +61,7 @@ Description:
 
                 </div><!--Row For Image and Short Description-->
 
-
                 <hr>
-
 
                 <!--Row for Tab Panel-->
 
@@ -157,35 +141,24 @@ Description:
 
                                 </div>
 
+                                <?php include("./Includes/product_rating.php")?>
 
                                 <div class="col-md-6">
                                     <h3>Add A review</h3>
 
-                                    <form action="" class="form-inline">
+                                    <form action="comment_helper.php" class="form-inline" method="POST">
                                         <div class="form-group">
-                                            <label for="">Name</label>
-                                            <input type="text" class="form-control">
+                                            <label for="name">Name</label>
+                                            <input id="name" type="text" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Email</label>
-                                            <input type="test" class="form-control">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="text" class="form-control">
                                         </div>
-
-                                        <div>
-                                            <h3>Your Rating</h3>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </div>
-
                                         <br>
-
                                         <div class="form-group">
-                                            <textarea name="" id="" cols="60" rows="10" class="form-control"></textarea>
+                                            <textarea id="comment" cols="60" rows="10" class="form-control"></textarea>
                                         </div>
-
-                                        <br>
                                         <br>
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-primary" value="SUBMIT">
