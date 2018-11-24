@@ -1,19 +1,10 @@
 <?php require_once("../../resources/config.php"); ?>
-
 <?php include(TEMPLATE_BACK . "/header.php"); ?>
-
-<?php 
-
+<?php
 if(!isset($_SESSION['username'])) {
-
-
 redirect("../../public");
-
 }
-
-
  ?>
-
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -108,12 +99,7 @@ redirect("../../public");
 
 
                     include(TEMPLATE_BACK . "/slides.php");
-
-
                 }
-
-
-
 
                 if(isset($_GET['delete_order_id'])){
 
@@ -138,14 +124,9 @@ redirect("../../public");
 
 
                 }
-
-
-
                 if(isset($_GET['delete_report_id'])){
 
-
                     include(TEMPLATE_BACK . "/delete_report.php");
-
 
                 }
 
@@ -157,32 +138,16 @@ redirect("../../public");
 
                 if(isset($_GET['delete_slide_id'])){
 
-
                     include(TEMPLATE_BACK . "/delete_slide.php");
 
                 }
 
                 if(isset($_GET['delete_slide_id'])){
 
-
                     include(TEMPLATE_BACK . "/delete_slide.php");
-
-
                 }
 
-
-
-
-
-            
-
-
-
-
-
                  ?>
-
-             
 
             </div>
             <!-- /.container-fluid -->
