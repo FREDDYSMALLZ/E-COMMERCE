@@ -673,32 +673,17 @@ DELIMETER;
 
 function add_user()
 {
-
-
     if (isset($_POST['add_user'])) {
 
 
         $username = escape_string($_POST['username']);
         $email = escape_string($_POST['email']);
         $password = escape_string($_POST['password']);
-// $user_photo = escape_string($_FILES['file']['name']);
-// $photo_temp = escape_string($_FILES['file']['tmp_name']);
-
-
-// move_uploaded_file($photo_temp, UPLOAD_DIRECTORY . DS . $user_photo);
-
-
         $query = query("INSERT INTO users(username,email,password) VALUES('{$username}','{$email}','{$password}')");
         confirm($query);
-
         set_message("USER CREATED");
-
         redirect("admin_index.php?users");
-
-
     }
-
-
 }
 
 
