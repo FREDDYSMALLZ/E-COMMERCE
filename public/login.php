@@ -1,62 +1,56 @@
-<?php require_once("../resources/config.php"); ?>
+<!--
+Project Title: E-Commerce
+Version: 1.4
+Authors: Fredrick Ondieki, Michael Weaver
+Date Updated: 11/11/2018
+Description:
+-->
+<!--
+The Server.php file is included serves the purpose of connecting the database when the user logs into
+the website.
+-->
+<?php include('../resources/server.php') ?>
+<?php include('../resources/db.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+	body{
+		margin: 0;
+		background:url('../Images/design.jpg');
+		background-size: cover;
+	}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h2>The E-Commerce Login Page </h2>
+	</div>
 
-<?php include(TEMPLATE_FRONT . DS . "header.php") ?>
+    <?php include('../resources/templates/front/header.php') ?>
 
-    <!-- Page Content -->
-    <div class="container">
+	<form method="post" action="login.php">
+		<!-- Get the errors incase the user attempts to log in with empty fields -->
+		<?php include('../resources/errors.php'); ?>
 
-      <header>
-            <h1 class="text-center">Login</h1>
-            <h2 class="text-center bg-warning"><?php display_message(); ?></h2>
-        <div class="col-sm-4 col-sm-offset-5">         
-            <form class="" action="" method="post" enctype="multipart/form-data">
-                    
-                    <?php
-                    if(isset($_POST['submit'])){
+		<div class="input-group">
+			<label>Username</label>
+			<input type="text" name="username" >
+		</div>
+		<div class="input-group">
+			<label>Password</label>
+			<input type="password" name="password">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="login_user">Login</button>
+		</div>
 
-                        $username = escape_string($_POST['username']);
-                        $password = escape_string($_POST['password']);
-
-                        $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password }' ");
-                        confirm($query);
-
-                        if(mysqli_num_rows($query) == 0) {
-
-                            set_message("Invalid Username or Password Combination Entered");
-                            redirect("login.php");
-
-
-                        } else {
-
-                            $_SESSION['username'] = $username;
-                            redirect("admin/index.php");
-
-                        }
-                    }
-
-                    ?>
-
-                <div class="form-group"><label for="">
-                    username<input type="text" name="username" class="form-control"></label>
-                </div>
-                 <div class="form-group"><label for="password">
-                    Password<input type="password" name="password" class="form-control"></label>
-                </div>
-
-                <div class="form-group">
-                  <input type="submit" name="submit" class="btn btn-primary" >
-                </div>
-                <p style="font-size:18px; color:#161707">
-                    New Customer ? <a href="registration.php" style="color: #1670db;">Sign up</a>
-                </p>
-
-            </form>
-        </div>  
-
-
-    </header>
-
-
-        </div>
-
-   <?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+		<p style="font-size:18px; color:#c1c9c7">
+			New Customer ? <a href="registration.php" style="color: #2bc0db;">Sign up</a>
+		</p>
+	</form>
+    <?php include('../resources/templates/front/footer.php') ?>
+</body>
+</html>

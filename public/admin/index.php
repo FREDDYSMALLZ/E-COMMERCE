@@ -1,194 +1,137 @@
 <?php require_once("../../resources/config.php"); ?>
 
-<?php include(TEMPLATE_BACK . "/header.php"); ?>
+<?php include('../../resources/templates/back/header.php'); ?>
 
-<?php 
+<?php
 
 if(!isset($_SESSION['username'])) {
 
-
-redirect("../../public");
+    redirect("../../public");
 
 }
 
+?>
 
- ?>
+<div id="page-wrapper">
 
-        <div id="page-wrapper">
+    <div class="container-fluid">
 
-            <div class="container-fluid">
+        <?php
 
-                <?php 
+        if($_SERVER['REQUEST_URI'] == "/E_COM/public/admin/" || $_SERVER['REQUEST_URI'] == "/E_COM/public/admin/index.php")  {
 
-                if($_SERVER['REQUEST_URI'] == "/ecom/public/admin/" || $_SERVER['REQUEST_URI'] == "/E-Commerce/public/admin/index.php")  {
+            include('../../resources/templates/back/admin_content.php');
 
+        }
 
-                    include(TEMPLATE_BACK . "/admin_content.php");
+        if(isset($_GET['orders'])){
+            include('../../resources/templates/back/orders.php');
 
-                }
+        }
 
-                if(isset($_GET['orders'])){
+        if(isset($_GET['categories'])){
+            include('../../resources/templates/back/categories.php');
+        }
 
+        if(isset($_GET['products'])){
 
-                    include(TEMPLATE_BACK . "/orders.php");
+            include('../../resources/templates/back/products.php');
 
+        }
 
-                }
 
-                if(isset($_GET['categories'])){
+        if(isset($_GET['add_product'])){
 
+            include('../../resources/templates/back/add_product.php');
 
-                    include(TEMPLATE_BACK . "/categories.php");
+        }
 
+        if(isset($_GET['edit_product'])){
+            include('../../resources/templates/back/edit_product.php');
 
-                }
+        }
 
-                 if(isset($_GET['products'])){
+        if(isset($_GET['users'])){
+            include('../../resources/templates/back/users.php');
 
+        }
 
-                    include(TEMPLATE_BACK . "/products.php");
+        if(isset($_GET['add_user'])){
 
+            include('../../resources/templates/back/add_user.php');
 
-                }
+        }
 
 
-                 if(isset($_GET['add_product'])){
+        if(isset($_GET['edit_user'])){
+            include('../../resources/templates/back/edit_user.php');
 
+        }
 
-                    include(TEMPLATE_BACK . "/add_product.php");
 
+        if(isset($_GET['reports'])){
 
-                }
+            include('../../resources/templates/back/reports.php');
 
+        }
 
-                 if(isset($_GET['edit_product'])){
+        if(isset($_GET['slides'])){
 
+            include('../../resources/templates/back/slides.php');
 
-                    include(TEMPLATE_BACK . "/edit_product.php");
 
 
-                }
+        }
+        if(isset($_GET['delete_order_id'])){
 
-                if(isset($_GET['users'])){
+            include('../../resources/templates/back/delete_order.php');
 
+        }
 
-                    include(TEMPLATE_BACK . "/users.php");
+        if(isset($_GET['delete_product_id'])){
 
+            include('../../resources/templates/back/delete_product.php');
 
-                }
+        }
 
+        if(isset($_GET['delete_category_id'])){
 
-                if(isset($_GET['add_user'])){
+            include('../../resources/templates/back/delete_category.php');
 
+        }
 
-                    include(TEMPLATE_BACK . "/add_user.php");
+        if(isset($_GET['delete_report_id'])){
 
 
-                }
+            include('../../resources/templates/back/delete_report.php');
 
 
-                 if(isset($_GET['edit_user'])){
 
+        }
 
-                    include(TEMPLATE_BACK . "/edit_user.php");
+        if(isset($_GET['delete_user_id'])){
 
+            include('../../resources/templates/back/delete_user.php');
 
-                }
+        }
 
+        if(isset($_GET['delete_slide_id'])){
 
-                  if(isset($_GET['reports'])){
+            include('../../resources/templates/back/delete_slide.php');
 
+        }
 
-                    include(TEMPLATE_BACK . "/reports.php");
+        if(isset($_GET['delete_slide_id'])){
 
+            include('../../resources/templates/back/delete_slide.php');
+        }
 
-                }
+        ?>
 
-                if(isset($_GET['slides'])){
+    </div>
+    <!-- /.container-fluid -->
 
+</div>
+<!-- /#page-wrapper -->
+<?php include('../../resources/templates/back/footer.php'); ?>
 
-                    include(TEMPLATE_BACK . "/slides.php");
-
-
-                }
-
-
-
-
-                if(isset($_GET['delete_order_id'])){
-
-
-                    include(TEMPLATE_BACK . "/delete_order.php");
-
-
-                }
-
-                if(isset($_GET['delete_product_id'])){
-
-
-                    include(TEMPLATE_BACK . "/delete_product.php");
-
-
-                }
-
-                if(isset($_GET['delete_category_id'])){
-
-
-                    include(TEMPLATE_BACK . "/delete_category.php");
-
-
-                }
-
-
-
-                if(isset($_GET['delete_report_id'])){
-
-
-                    include(TEMPLATE_BACK . "/delete_report.php");
-
-
-                }
-
-                if(isset($_GET['delete_user_id'])){
-
-                    include(TEMPLATE_BACK . "/delete_user.php");
-
-                }
-
-                if(isset($_GET['delete_slide_id'])){
-
-
-                    include(TEMPLATE_BACK . "/delete_slide.php");
-
-                }
-
-                if(isset($_GET['delete_slide_id'])){
-
-
-                    include(TEMPLATE_BACK . "/delete_slide.php");
-
-
-                }
-
-
-
-
-
-            
-
-
-
-
-
-                 ?>
-
-             
-
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
-
-
-<?php include(TEMPLATE_BACK . "/footer.php"); ?>

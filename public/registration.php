@@ -16,7 +16,7 @@ Description:
         body{
             margin: 0;
             background-size: cover;
-            background-image: url('Images/leaves.jpg');
+            background-image: url('../Images/bright-momentum.png');
         }
     </style>
 </head>
@@ -24,7 +24,7 @@ Description:
 <div class="header">
     <h2>E-Commerce Members Registration</h2>
 </div>
-
+<?php include('../resources/templates/front/header.php') ?>
 <form method="post" action="registration.php">
     <!-- Capture errors incase te user tries to pass in empty fields -->
     <?php include('../resources/errors.php'); ?>
@@ -34,16 +34,8 @@ Description:
     </div>
 
     <div class="input-group">
-        <label>Middle Name</label>
-        <input type="text" name="MiddleName" value="<?php echo $MiddleName; ?>">
-    </div>
-    <div class="input-group">
         <label>Last Name</label>
         <input type="text" name="LastName" value="<?php echo $LastName; ?>">
-    </div>
-    <div class="input-group">
-        <label>Phone Number</label>
-        <input type="text" name="PhoneNumber" value="<?php echo $PhoneNumber; ?>">
     </div>
     <div class="input-group">
         <label>Username</label>
@@ -65,7 +57,9 @@ Description:
     <p style="font-size:18px; color:#c1c9c7">
         Already have an account? <a href="login.php" style="color: #2bc0db;">Sign in</a>
     </p>
-    <button type="submit" class="btn" name="RegisterUser">Register</button>
+        <button type="submit" class="btn" name="RegisterUser">Register</button>
 
 </form>
+<?php include('../resources/templates/front/footer.php') ?>
+
 </body>
