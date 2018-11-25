@@ -6,7 +6,7 @@ Date Updated: 11/11/2018
 Description:
 -->
 <!--First, Make a connection to the Database-->
-<?php include('server.php') ?>
+<?php include('../resources/server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +27,7 @@ Description:
 
 <form method="post" action="registration.php">
     <!-- Capture errors incase te user tries to pass in empty fields -->
-    <?php include('errors.php'); ?>
+    <?php include('../resources/errors.php'); ?>
     <div class="input-group">
         <label>First Name</label>
         <input type="text" name="FirstName" value="<?php echo $FirstName; ?>">
@@ -65,7 +65,7 @@ Description:
     <p style="font-size:18px; color:#c1c9c7">
         Already have an account? <a href="login.php" style="color: #2bc0db;">Sign in</a>
     </p>
-        <button type="submit" class="btn" name="RegisterUser">Register</button>
+    <button type="submit" class="btn" name="RegisterUser">Register</button>
 
 </form>
 </body>

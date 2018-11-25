@@ -9,9 +9,7 @@ $_SESSION['message'] = '';
 $username = "";
 $email    = "";
 $FirstName = "";
-$MiddleName = "";
 $LastName = "";
-$PhoneNumber = "";
 $errors = array();
 $_SESSION['success'] = "";
 
@@ -21,9 +19,7 @@ $db = mysqli_connect('localhost', 'root', '', 'mydatabase');
 // Register user from the Registration Page by receiving all entries from the form
 if (isset($_POST['RegisterUser'])) {
     $FirstName = mysqli_real_escape_string($db, $_POST['FirstName']);
-    $MiddleName = mysqli_real_escape_string($db, $_POST['MiddleName']);
     $LastName = mysqli_real_escape_string($db, $_POST['LastName']);
-    $PhoneNumber = mysqli_real_escape_string($db, $_POST['PhoneNumber']);
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
@@ -32,7 +28,6 @@ if (isset($_POST['RegisterUser'])) {
     // Validates the user entries for null or empty fields
     if (empty($FirstName)) { array_push($errors, "First Name is required."); }
     if (empty($LastName)) { array_push($errors, "Last Name is required."); }
-    if (empty($PhoneNumber)) { array_push($errors, "Phone Number is required."); }
     if (empty($username)) { array_push($errors, "Username is required."); }
     if (empty($email)) { array_push($errors, "Email is required."); }
     if (empty($password_1)) { array_push($errors, "Password is required."); }
@@ -43,8 +38,8 @@ if (isset($_POST['RegisterUser'])) {
     // Save data to the database
     if (count($errors) == 0) {
         $password = md5($password_1);// Save the encrypted form of password to thd database
-        $query = "INSERT INTO users (FirstName, MiddleName, LastName, PhoneNumber, username, email, password)
-     " . "VALUES ('$FirstName', '$MiddleName', '$LastName', '$PhoneNumber','$username', '$email', '$password')";
+        $query = "INSERT INTO users (FirstName,LastName,username, email, password)
+     " . "VALUES ('$FirstName',$LastName','$username', '$email', '$password')";
         mysqli_query($db, $query);
 
         //Successful user Registration
@@ -77,7 +72,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: admin/admin_index.php');
+            header('location: admin/index.php');
         }else {
             array_push($errors, "Wrong username/password. Please try again.");
         }
