@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="177455fe-49bd-4482-a79c-792efe4cdd6d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/product_rating.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/rate_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +43,26 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/rate_helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/product_rating.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,6 +115,8 @@
         <option value="$PROJECT_DIR$/resources/server.php" />
         <option value="$PROJECT_DIR$/public/register.php" />
         <option value="$PROJECT_DIR$/resources/functions.php" />
+        <option value="$PROJECT_DIR$/public/rate_helper.php" />
+        <option value="$PROJECT_DIR$/public/product_rating.php" />
       </list>
     </option>
   </component>
@@ -109,8 +132,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="E-Commerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-Commerce" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-Commerce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-Commerce" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -119,17 +157,17 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\E-Commerce\resources\templates\front" />
-      <recent name="C:\xampp\htdocs\E-Commerce\public" />
-      <recent name="C:\xampp\htdocs\E-Commerce\resources" />
-      <recent name="C:\xampp\htdocs\E-Commerce" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\E-Commerce\public" />
       <recent name="C:\xampp\htdocs\E-Commerce\resources" />
       <recent name="C:\xampp\htdocs\E-Commerce" />
       <recent name="C:\xampp\htdocs\E-Commerce\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\E-Commerce\resources\templates\front" />
+      <recent name="C:\xampp\htdocs\E-Commerce\public" />
+      <recent name="C:\xampp\htdocs\E-Commerce\resources" />
+      <recent name="C:\xampp\htdocs\E-Commerce" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -169,6 +207,7 @@
       <workItem from="1543113091624" duration="12000" />
       <workItem from="1543125761456" duration="319000" />
       <workItem from="1543171461287" duration="23000" />
+      <workItem from="1543187522148" duration="517000" />
     </task>
     <task id="LOCAL-00001" summary="Added thank you page displayed after user makes a purchase">
       <created>1542651204443</created>
@@ -205,16 +244,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543125951925</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Functionality of the login and registration page">
+      <created>1543187647770</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543187647770</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32286000" />
+    <option name="totallyTimeSpent" value="32803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="32" y="8" width="1460" height="832" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18142857" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -244,7 +291,8 @@
     <MESSAGE value="Code refactoring" />
     <MESSAGE value="Added the logout functionality to the website" />
     <MESSAGE value="Full project functionality to the website and code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full project functionality to the website and code refactoring" />
+    <MESSAGE value="Functionality of the login and registration page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Functionality of the login and registration page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config.php" />
@@ -368,6 +416,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/rate_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/product_rating.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
         </state>
       </provider>
     </entry>
