@@ -2,6 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="177455fe-49bd-4482-a79c-792efe4cdd6d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/errors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/server.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/Baby.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/C105_Aunt_Baby_Clothes_HotPink_1024x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/Cell-Phone-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/Chelsea.Boot.Black.w_grande.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/Custom-CMS-Development.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/JY-Audio-A9-Wireless-Soundbar-Bluetooth-Speakers-3D-Stereo-Woofer-Home-Theater-5-1-Surround-Sound.jpg_640x640.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/Make-up-kit.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/books-1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/boots.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/boots1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/bright-momentum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/ca-soundbar-ms650-hw-ms650-zc-settitaniumgray-61628793.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/clothes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/cms-web-design.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/lipstick.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/makeover.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/makeup.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/makeups-set-on-glossy-background-FBJ2JR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/php_MySQL.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/uploads/radio.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,13 +67,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/templates/back/add_user.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -129,19 +149,6 @@
               <item name="E-Commerce" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="E-Commerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E-Commerce" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="E-Commerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E-Commerce" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="back" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -156,10 +163,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\E-Commerce\resources\templates\back" />
-      <recent name="C:\xampp\htdocs\E-Commerce\resources\templates\front" />
-      <recent name="C:\xampp\htdocs\E-Commerce\public" />
       <recent name="C:\xampp\htdocs\E-Commerce\resources" />
+      <recent name="C:\xampp\htdocs\E-Commerce\resources\templates\front" />
+      <recent name="C:\xampp\htdocs\E-Commerce\resources\templates\back" />
+      <recent name="C:\xampp\htdocs\E-Commerce\public" />
       <recent name="C:\xampp\htdocs\E-Commerce" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -278,15 +285,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543250646627</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added the missing project files">
+      <created>1543250788692</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543250788692</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33305000" />
+    <option name="totallyTimeSpent" value="33535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="1" width="1460" height="832" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18428572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -323,7 +336,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added the missing project files" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/edit_product.php" />
     <entry file="file://$PROJECT_DIR$/contact.php" />
     <entry file="file://$PROJECT_DIR$/checkout.php" />
     <entry file="file://$PROJECT_DIR$/cart.php" />
@@ -333,7 +345,6 @@
     <entry file="file://$PROJECT_DIR$/admin/orders.php" />
     <entry file="file://$PROJECT_DIR$/admin/products.php" />
     <entry file="file://$PROJECT_DIR$/category.php" />
-    <entry file="file://$PROJECT_DIR$/resources/db.php" />
     <entry file="file://$PROJECT_DIR$/delete_category.php" />
     <entry file="file://$PROJECT_DIR$/Includes/Front/top_nav.php" />
     <entry file="file://$PROJECT_DIR$/thank_you.php" />
@@ -460,7 +471,13 @@
     <entry file="file://$PROJECT_DIR$/resources/cart.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/templates/front/side_nav.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/back/add_user.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/db.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
