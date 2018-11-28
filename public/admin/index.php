@@ -18,7 +18,7 @@ if(!isset($_SESSION['username'])) {
 
         <?php
 
-        if($_SERVER['REQUEST_URI'] == "/E_COM/public/admin/" || $_SERVER['REQUEST_URI'] == "/E-Commerce/public/admin/index.php")  {
+        if($_SERVER['REQUEST_URI'] == "/E-Commerce/public/admin/" || $_SERVER['REQUEST_URI'] == "/E-Commerce/public/admin/index.php")  {
 
             include('../../resources/templates/back/admin_content.php');
 

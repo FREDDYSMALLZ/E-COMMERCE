@@ -72,7 +72,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You have  successfully logged in";
-            header('location: admin/index.php');
+            header('location: admin');
         }else {
             array_push($errors, "Invalid  Username or Password Combination");
         }
