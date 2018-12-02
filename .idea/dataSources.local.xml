@@ -2,11 +2,11 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="E-CommerceConn" uuid="950c57f3-1a4e-45bc-ae3c-c02a7f771479">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0.0" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
     <data-source name="MyDb" uuid="5c7cb8ea-891f-4d17-98bc-445659f0202a">
-      <database-info product="MySQL" version="5.5.5-10.1.36-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MARIADB" exact-version="5.5.5">
+      <database-info product="MySQL" version="5.5.5-10.1.36-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" family="MARIADB" exact-version="5.5.5">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
